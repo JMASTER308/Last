@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Open a Case - SAPS</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(to bottom right, #003366, #0059b3);
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+
+      .form-container {
+        background: rgba(0, 0, 0, 0.5);
+        padding: 40px;
+        border-radius: 15px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+        width: 100%;
+        max-width: 500px;
+      }
+
+      h2 {
+        text-align: center;
+        margin-bottom: 25px;
+      }
+
+      label {
+        display: block;
+        margin-top: 15px;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+
+      input,
+      textarea,
+      select {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        font-size: 16px;
+      }
+
+      textarea {
+        resize: vertical;
+        height: 100px;
+      }
+
+      button {
+        width: 100%;
+        padding: 12px;
+        font-size: 18px;
+        background-color: #ffcc00;
+        border: none;
+        border-radius: 8px;
+        color: black;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      button:hover {
+        background-color: #e6b800;
+      }
+
+      .confirmation {
+        margin-top: 20px;
+        background-color: #00cc66;
+        color: white;
+        padding: 15px;
+        border-radius: 10px;
+        font-size: 18px;
+        text-align: center;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-container">
+      <h2>Open a New Case</h2>
+      <form id="caseForm" onsubmit="submitCase(event)">
+        <label for="idNumber">ID Number</label>
+        <input type="text" id="idNumber" name="idNumber" required />
+
+        <label for="caseType">Type of Case</label>
+        <select id="caseType" name="caseType" required>
+          <option value="">Select</option>
+          <option value="theft">Theft</option>
+          <option value="assault">Assault</option>
+          <option value="fraud">Fraud</option>
+          <option value="missing_person">Missing Person</option>
+          <option value="other">Other</option>
+        </select>
+
+        <label for="description">Description</label>
+        <textarea
+          id="description"
+          name="description"
+          required
+          placeholder="Describe what happened..."
+        ></textarea>
+
+        <label for="location">Location of Incident</label>
+        <input type="text" id="location" name="location" required />
+
+        <label for="date">Date of Incident</label>
+        <input type="date" id="date" name="date" required />
+
+        <button type="submit">Submit Case</button>
+      </form>
+
+      <div id="confirmationMessage" class="confirmation">
+        ✅ Your case has been submitted. Police are on their way!
+      </div>
+    </div>
+
+    <script>
+      function submitCase(event) {
+        event.preventDefault();
+
+        // Hide form
+        document.getElementById("caseForm").style.display = "none";
+
+        // Show confirmation message
+        document.getElementById("confirmationMessage").style.display = "block";
+      }
+    </script>
+  </body>
+</html>

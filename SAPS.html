@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>SAPS - Open a Case</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(to bottom right, #003366, #0059b3);
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .container {
+        text-align: center;
+        background: rgba(0, 0, 0, 0.4);
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+      }
+
+      h1 {
+        font-size: 36px;
+        margin-bottom: 20px;
+      }
+
+      p {
+        font-size: 18px;
+        margin-bottom: 30px;
+      }
+
+      .open-case-btn {
+        padding: 15px 30px;
+        font-size: 18px;
+        color: white;
+        background-color: #ffcc00;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      .open-case-btn:hover {
+        background-color: #e6b800;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>SAPS - South African Police Service</h1>
+      <p>Click the button below to open a criminal or incident case report</p>
+      <a href="/Form.html">
+        <button class="open-case-btn" onclick="openCase()">Open a Case</button>
+      </a>
+    </div>
+
+    <script>
+      function openCase() {
+        alert(".....");
+        // You can replace this with redirect: window.location.href = 'case_form.html';
+      }
+    </script>
+  </body>
+</html>
